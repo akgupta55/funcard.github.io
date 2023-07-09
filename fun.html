@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <title>Just magic</title>
+
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      body {
+        color: #e00;
+        background: pink;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .main {
+        padding-top: 40%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      input {
+        font-size: 20px;
+        width: 280px;
+        height: 40px;
+        border: 2px solid red;
+        border-radius: 20px;
+        background: rgb(245, 162, 170);
+        padding-left: 10px;
+        outline: none;
+        cursor: pointer;
+      }
+      button {
+        width: 140px;
+        margin-top: 15px;
+        padding: 5px;
+        font-size: 30px;
+        background: rgb(237, 152, 152);
+        color: rgb(222, 12, 12);
+        border: 2px solid rgb(61, 55, 55);
+        border-radius: 20px;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: rgb(165, 21, 21);
+        color: rgb(237, 152, 152);
+      }
+      .content {
+        /* width: 100%; */
+        height: 100%;
+        display: none;
+        font-size: 25px;
+        font-family: "Pacifico", cursive;
+        color: #e00;
+        text-shadow: 0 0 9px blue, 0 0 7px #fff, 0 0 10px #fff;
+      }
+
+      .heart {
+        font-size: 80px;
+        color: #ee0000;
+        animation: beat 0.25s infinite alternate;
+        transform-origin: center;
+      }
+
+      /* Heart beat animation */
+      @keyframes beat {
+        to {
+          transform: scale(3);
+        }
+      }
+    </style>
+
+    <script>
+      function Show() {
+        var name = document.getElementById("name").value;
+        if (document.getElementById("name").value == "") {
+          alert("Please type your Name");
+        } else {
+          document.getElementById("addname").innerHTML = name;
+          document.getElementById("m1").style.display = "none";
+          document.getElementById("c1").style.display = "block";
+        }
+      }
+    </script>
+  </head>
+
+  <body>
+    <div class="parent">
+      <div class="main" id="m1">
+        <center>
+          <h1>ENTER YOUR NAME</h1>
+          <br /><br />
+          <input type="text" placeholder="Enter Name....... " id="name" />
+          <br /><br />
+          <button onclick="Show()">CLICK</button>
+        </center>
+      </div>
+      <div class="content" id="c1">
+        <center>
+          <h1>I</h1>
+          <h1 class="heart">&#x2665;</h1>
+          <h1>you</h1>
+          <h1>Dear</h1>
+          <h1 id="addname"></h1>
+          <h1>Ji</h1>
+        </center>
+      </div>
+    </div>
+  </body>
+</html>
